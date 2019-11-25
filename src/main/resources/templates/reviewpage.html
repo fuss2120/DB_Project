@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Review</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	
+<form action="">
+
+<h1 align = "center">Conference Review System Review Paper</h1>
+
+<table align = "center">
+	<style>
+		table {
+			background: #B5CDFF;
+			padding: 20px;
+			border: 1px solid blue;
+			border-radius: 25px;
+			width: 700px;
+		}
+		tr {
+			height: 25px;
+		}
+		td {
+			padding: 0 5px 0 5px;
+			width: 20%;
+			text-align: center;
+		}
+		#paperidbox {
+			text-align: center;
+		}
+		.options {
+			text-align: center;
+		}
+		.comments {
+			text-align: left;
+		}
+	</style>
+	<tr>
+		<td></td>
+		<td></td>
+		<td id="paperidbox"><input type="text" name="paperid" maxlength="10" size="10" required autofocus placeholder="Paper ID"/></td>
+	</tr>
+	
+	<tr>
+		<td class="options">Tech Merit:</td>
+		<td class="options">Readability:</td>
+		<td class="options">Originality:</td>
+		<td class="options">Relevance:</td>
+		<td class="options">Overall Recommendation:</td>
+	</tr>
+	
+	<tr>
+		<td class="options">
+			<select name="techmerit">
+				<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+			</select>
+		</td>
+		<td class="options">
+			<select name="readability">
+				<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+			</select>
+		</td>
+		<td class="options">
+			<select name="originality">
+				<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+			</select>
+		</td>
+		<td class="options">
+			<select name="relevance">
+				<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+			</select>
+		</td>
+		<td class="options">
+			<select name="overallrec">
+				<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+			</select>
+		</td>
+	</tr>
+	
+	<tr></tr>
+	
+	<tr>
+		<td>Committee Comments:</td>
+		<td colspan="4" class="comments"><input type="text" name="committeecomments" size="80"/></td>
+	</tr>
+	
+	<tr></tr>
+	
+	<tr>
+		<td>Author Comments:</td>
+		<td colspan="4" class="comments"><input type="text" name="authorcomments" size="80"/></td>
+	</tr>
+
+	<tr></tr>
+	
+	<tr>
+		<td></td>
+		<td></td>
+		<td><input type="submit" value="Submit Review"/></td>
+	</tr>
+
+</table>
+</form>
+
+</body>
+</html>

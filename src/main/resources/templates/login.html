@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/demo/src/main/resources/static/css/login-register.css">
+</head>
+<body>
+	
+<form action="">
+
+<h1 align = "center">Conference Review System Login</h1>
+
+<table width ="60%" align = "center">
+	<style>
+		table {
+			background: #B5CDFF;
+			padding: 20px;
+			border: 1px solid blue;
+			border-radius: 25px;
+			max-width:500px;
+		}
+		td {
+			padding:0 15px 0 15px;
+		}
+		.first{
+			text-align: right;
+			width: 30%
+		}
+		tr{
+			height: 25px;
+		}
+	</style>
+	<tr>
+		<td class="first">Email:</td>
+		<td><input type="text" name="email" size="35"/></td>
+	</tr>
+	
+	<tr>
+		<td class="first">Password:</td>
+		<td><input type="password" name="password" maxlength="20"/></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td><a href="http://localhost:8080/registration">No account? Register here</a><td>
+	</tr>
+
+	<tr height="20px"></tr>
+	
+	<tr>
+		<td></td>
+		<td><input type="submit" value="Login"/></td>
+	</tr>
+
+</table>
+</form>
+
+</body>
+</html>

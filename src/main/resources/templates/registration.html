@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	
+<form action="">
+
+<h1 align = "center">Conference Review System Registration</h1>
+
+<table width ="60%" align = "center">
+	<style>
+		table {
+			background: #B5CDFF;
+			padding: 20px;
+			border: 1px solid blue;
+			border-radius: 25px;
+			max-width:500px;
+		}
+		td {
+			padding:0 15px 0 15px;
+		}
+		.first {
+			text-align: right;
+			width: 30%
+		}
+		tr{
+			height: 25px;
+		}
+	</style>
+	<tr>
+		<td class="first">First Name:</td>
+		<td><input type="text" name="fname" maxlength="20"/></td>
+	</tr>
+	<tr>
+		<td class="first">M. Init:</td>
+		<td><input type="text" name="minit" maxlength="1" size="2"/></td>
+	</tr>
+	<tr>
+		<td class="first">Last Name:</td>
+		<td><input type="text" name="lname" maxlength="20"</td>
+	</tr>
+
+	<tr>
+		<td class="first">Email:</td>
+		<td><input type="text" name="email" size="35" /></td>
+	</tr>
+	<tr>
+		<td class="first">Phone:</td>
+		<td><input type="text" name="phone" maxlength="10"/></td>
+	</tr>
+	<tr>
+		<td class="first">Affiliation:</td>
+		<td><input type="text" name="affiliation" maxlength="25" size="25"</td>
+	</tr>
+	
+	<tr>
+		<td class="first">Topics of Interest (;):</td>
+		<td><input type="text" name="topics" maxlength="50" size="40"</td>
+	</tr>
+	
+	<tr>
+		<td class="first">Role:</td>
+		<td>
+			<select name="Role">
+				<option value="Author">Author</option>
+				<option value="Reviewer">Reviewer</option>
+				<option value="Both">Both</option>
+			</select>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="first">Password:</td>
+		<td><input type="password" name="password" maxlength="20"/></td>
+	</tr>
+
+	<tr height="25px"></tr>
+	
+	<tr>
+		<td></td>
+		<td><input type="submit" value="Register"/></td>
+	</tr>
+
+</table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Paper</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	
+<form action="">
+
+<h1 align = "center">Conference Review System New Paper</h1>
+
+<table align = "center">
+	<style>
+		table {
+			background: #B5CDFF;
+			padding: 20px;
+			border: 1px solid blue;
+			border-radius: 25px;
+			width: 500px;
+		}
+		tr {
+			height: 25px;
+		}
+		td {
+			padding: 0 5px 0 5px;
+			width: 20%;
+			text-align: center;
+		}
+	</style>
+	
+	<tr>
+		<td>Title:</td>
+		<td><input type="text" name="title" maxlength="30" size="30"/></td>
+	</tr>
+	
+	<tr></tr>
+	
+	<tr>
+		<td>File Name:</td>
+		<td><input type="text" name="fileName" maxlength="30" size="30"/></td>
+	</tr>
+	
+	<tr>
+		<td>Abstract:</td>
+		<td><textarea name="abstract" cols="30" rows="10"></textarea></td>
+	</tr>
+	
+	<tr></tr>
+	
+	<tr>
+		<td></td>
+		<td><input type="submit" value="Submit Review"/></td>
+	</tr>
+
+</table>
+</form>
+
+</body>
+</html>
