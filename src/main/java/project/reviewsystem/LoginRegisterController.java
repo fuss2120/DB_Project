@@ -32,7 +32,7 @@ public class LoginRegisterController {
         return "login";
     }
     
-    @GetMapping("/homepage")
+    @GetMapping("/")
     public String homepage(Model model) {
         return "homepage";
     }
