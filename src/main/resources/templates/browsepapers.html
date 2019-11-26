@@ -39,7 +39,7 @@
 	<tr th:each="paper : ${paperList}">
 	    <td align="center" th:text="${paper.title}"> </td>
 	    <td align="center">
-	    	<a href="http://localhost:8080/searchpapers" th:text="${paper.paperid}"/>
+	    	<a th:href="@{'/searchpapers?paperId=' + ${paper.paperid}}" th:text="${paper.paperid}"/>
 	    </td>
 	</tr>
 

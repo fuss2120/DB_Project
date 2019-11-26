@@ -34,10 +34,20 @@ public class PaperLookupController {
 	private PaperService paperService;
 
 	@GetMapping("/searchpapers")
-    public String searchPapers(Model model) {
+    public String searchPapers(
+			@RequestParam(name="paperId", required=false) String paperId,
+			@ModelAttribute Paper paper,
+			Model model
+		) {
 		List<Rating> ratingList = new ArrayList<Rating>();
 
-    	ratingList = ratingService.getRatingList();
+		System.out.println(paperId);
+		if (paperId == null || paperId.equals(""))
+    		ratingList = ratingService.getRatingList();
+		else {
+			paper = new Paper("", paperId);
+			ratingList = ratingService.getRatingListForPaper(paper);
+		}
 
     	model.addAttribute("ratingList", ratingList);
         return "searchpapers";
