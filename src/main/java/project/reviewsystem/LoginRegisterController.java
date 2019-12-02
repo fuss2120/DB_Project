@@ -36,8 +36,9 @@ public class LoginRegisterController {
     }
 
     @RequestMapping(value="/registration", method=RequestMethod.POST)
-    public String register(@ModelAttribute Participator participator, Model model) {
+    public String register(@ModelAttribute Participator participator, Model model, HttpSession session) {
         participatorService.registerParticipator(participator);
+        session.setAttribute("user", participator);
         return "redirect:/";
     }
     
