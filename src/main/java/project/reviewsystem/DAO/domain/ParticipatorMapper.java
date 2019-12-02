@@ -25,10 +25,22 @@ public interface ParticipatorMapper {
 	@Insert("INSERT INTO reviewer(email) VALUES (#{email})")
 	public void registerReviewer(Participator participator);
 
+
 	@Select(
-		"SELECT email, firstname, minit, lastname, phone, affiliation "
-		+ "FROM participator "
-		+ "WHERE email = #{email}"
+		"SELECT "
+    		+ "p.email, p.firstname, p.minit, p.lastname, p.phone, p.affiliation, "
+    		+ "( "
+        		+ "CASE "
+            		+ "WHEN a.email IS NOT NULL AND r.email IS NOT NULL THEN 'Both' "
+            		+ "WHEN a.email IS NOT NULL THEN 'Author' "
+            		+ "WHEN r.email IS NOT NULL THEN 'Reviewer' "
+            		+ "ELSE null "
+        		+ "END "
+    		+ ") as role "
+		+ "FROM Participator p "
+		+ "LEFT JOIN author a ON p.email = a.email "
+		+ "LEFT JOIN reviewer r ON p.email = r.email "
+		+ "WHERE p.email = #{email}"
 	)
 	public List<Participator> getParticipatorListFromData(Participator participator);
 }

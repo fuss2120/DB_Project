@@ -39,17 +39,17 @@
 	<tr></tr>
 	
 	<tr>
-		<td><a href="http://localhost:8080/reviewpage"><img class="pictures" src="https://cdn1.iconfinder.com/data/icons/hand-gestures-28/128/hand-thumbs-up-512.png"></a></td>
+		<td th:if="${user.role != 'Author'}"><a href="http://localhost:8080/reviewpage"><img class="pictures" src="https://cdn1.iconfinder.com/data/icons/hand-gestures-28/128/hand-thumbs-up-512.png"></a></td>
 		<td><a href="http://localhost:8080/searchpapers"><img class="pictures" src="https://cdn.pixabay.com/photo/2019/05/07/15/07/magnifying-glass-4186151_960_720.png"></a></td>
 		<td><a href="http://localhost:8080/browsepapers"><img class="pictures" src="https://shop.24by7publishing.com/wp-content/uploads/2019/04/knowledge.svg"></a></td>
-		<td><a href="http://localhost:8080/createpaper"><img class="pictures" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Black_pencil.svg/600px-Black_pencil.svg.png"></a></td>
+		<td th:if="${user.role != 'Reviewer'}"><a href="http://localhost:8080/createpaper"><img class="pictures" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Black_pencil.svg/600px-Black_pencil.svg.png"></a></td>
 	</tr>
 	
 	<tr>
-		<td>Review a Paper</td>
+		<td th:if="${user.role != 'Author'}">Review a Paper</td>
 		<td>Look Up a Paper</td>
 		<td>Browse All Papers</td>
-		<td>Create a New Paper</td>
+		<td th:if="${user.role != 'Reviewer'}">Create a New Paper</td>
 	</tr>
 
 </table>

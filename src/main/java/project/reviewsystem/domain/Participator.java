@@ -39,7 +39,7 @@ public class Participator {
 	public Participator(
 		String email, String firstname,
 		String lastname, String minit,
-		String phone, String affiliation
+		String phone, String affiliation, String role
 	)
 	{
 		this.email = email;
@@ -49,7 +49,7 @@ public class Participator {
 		this.phone = phone;
 		this.affiliation = affiliation;
 		this.password = null;
-		this.role = null;
+		this.role = role;
 	}
 	
 	public String getEmail() {
