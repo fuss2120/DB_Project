@@ -26,5 +26,11 @@ public class ParticipatorDAO {
 	public void registerReviewer(Participator participator) {
 		participatorMapper.registerReviewer(participator);
 	}
+
+	public List<Participator> getParticipatorListFromData(Participator participator) {
+		List<Participator> participatorList = new ArrayList<Participator>();
+		participatorList = participatorMapper.getParticipatorListFromData(participator);
+		return participatorList;
+	}
 	
 }

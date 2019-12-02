@@ -46,6 +46,9 @@ public class LoginRegisterController {
 
     @RequestMapping(value="/login", method=RequestMethod.POST)
     public String loginHandle(@ModelAttribute Participator participator, Model model) {
+        Participator user = participatorService.getParticipatorFromData(participator);
+        if (user == null)
+            return "login";
         return "redirect:/";
     }
     

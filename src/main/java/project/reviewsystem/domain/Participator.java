@@ -9,6 +9,17 @@ public class Participator {
 	private String phone;
 	private String affiliation;
 	private String role;
+
+	public Participator() {
+		this.email = null;
+		this.firstname = null;
+		this.lastname = null;
+		this.minit = null;
+		this.password = null;
+		this.phone = null;
+		this.affiliation = null;
+		this.role = null;
+	}
 	
 	public Participator(
 			String email, String firstname,
@@ -23,6 +34,22 @@ public class Participator {
 		this.phone = phone;
 		this.affiliation = affiliation;
 		this.role = role;
+	}
+
+	public Participator(
+		String email, String firstname,
+		String lastname, String minit,
+		String phone, String affiliation
+	)
+	{
+		this.email = email;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.minit = minit;
+		this.phone = phone;
+		this.affiliation = affiliation;
+		this.password = null;
+		this.role = null;
 	}
 	
 	public String getEmail() {

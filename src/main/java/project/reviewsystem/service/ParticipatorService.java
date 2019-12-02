@@ -30,5 +30,13 @@ public class ParticipatorService {
 			participatorDAO.registerReviewer(participator);
 		}
 	}
+
+	public Participator getParticipatorFromData(Participator participator) {
+		List<Participator> participatorList = new ArrayList<Participator>();
+		participatorList = participatorDAO.getParticipatorListFromData(participator);
+		if (participatorList.size() != 1)
+			return null;
+		return participatorList.get(0);
+	}
 	
 }

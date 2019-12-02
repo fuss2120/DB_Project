@@ -24,4 +24,11 @@ public interface ParticipatorMapper {
 
 	@Insert("INSERT INTO reviewer(email) VALUES (#{email})")
 	public void registerReviewer(Participator participator);
+
+	@Select(
+		"SELECT email, firstname, minit, lastname, phone, affiliation "
+		+ "FROM participator "
+		+ "WHERE email = #{email}"
+	)
+	public List<Participator> getParticipatorListFromData(Participator participator);
 }
