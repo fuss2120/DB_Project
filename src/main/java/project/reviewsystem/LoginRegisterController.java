@@ -3,6 +3,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,15 +47,18 @@ public class LoginRegisterController {
     }
 
     @RequestMapping(value="/login", method=RequestMethod.POST)
-    public String loginHandle(@ModelAttribute Participator participator, Model model) {
+    public String loginHandle(@ModelAttribute Participator participator, Model model, HttpSession session) {
         Participator user = participatorService.getParticipatorFromData(participator);
         if (user == null)
             return "login";
+        session.setAttribute("user", user);
         return "redirect:/";
     }
     
     @GetMapping("/")
-    public String homepage(Model model) {
+    public String homepage(Model model, HttpSession session) {
+        Participator user = (Participator)session.getAttribute("user");
+        model.addAttribute("user", user);
         return "homepage";
     }
 }

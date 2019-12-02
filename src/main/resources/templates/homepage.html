@@ -33,7 +33,7 @@
 		}
 	</style>
 	<tr>
-		<td colspan="4"><h2>Welcome, John Smith!</h2></td>
+		<td colspan="4"><h2 th:text="@{'Welcome, ' + ${user.firstname}} + '!'"></h2></td>
 	</tr>
 	
 	<tr></tr>
