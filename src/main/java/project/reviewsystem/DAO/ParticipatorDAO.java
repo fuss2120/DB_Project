@@ -20,12 +20,10 @@ public class ParticipatorDAO {
 	}
 
 	public void registerAuthor(Participator participator) {
-		System.out.println("Registering author");
 		participatorMapper.registerAuthor(participator);
 	}
 
 	public void registerReviewer(Participator participator) {
-		System.out.println("Registering reviewer");
 		participatorMapper.registerReviewer(participator);
 	}
 	

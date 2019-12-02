@@ -41,7 +41,6 @@ public class PaperLookupController {
 		) {
 		List<Rating> ratingList = new ArrayList<Rating>();
 
-		System.out.println(paperId);
 		if (paperId == null || paperId.equals(""))
     		ratingList = ratingService.getRatingList();
 		else {
