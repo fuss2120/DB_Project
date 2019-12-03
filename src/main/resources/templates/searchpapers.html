@@ -1,70 +1,55 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Paper Lookup</title>
+	<link rel="stylesheet" type="text/css" href="css/searchpapers.css"/>
+	<title>Paper Lookup</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 	
 <form action="">
 
-<h1 align = "center">Conference Review System Paper Lookup</h1>
+<h1>Conference Review System Paper Lookup</h1>
 
-<table width ="60%" align = "center">
-	<style>
-	table {
-		background: #B5CDFF;
-		padding: 20px;
-		border: 1px solid blue;
-		border-radius: 25px;
-		max-width:500px;
-	}
-	td {
-		padding:0 15px 0 15px;
-	}
-	tr{
-		height: 25px;
-	}
-	</style>
-	
+<table>	
 	<tr>
 		<td></td>
-		<td colspan="2" align="right">Paper ID:</td>
+		<td colspan="2" id="paperid">Paper ID:</td>
 		<td><input type="text" name="paperId" size="10"/></td>
 	</tr>
 	
 	<tr>
 		<td></td>
 		<td></td>
-		<td colspan="2" align="center"><input type="submit" value="Submit"/></td>
+		<td colspan="2"><input type="submit" value="Submit"/></td>
 	</tr>
 	
 	<tr>
 		<td></td>
-		<td align="center" colspan="4"><h3>All ratings in database:</h3></td>
+		<td colspan="4"><h3>All ratings in database:</h3></td>
 	</tr>
 	
 	<tr>
-		<td align="center">PaperID</td>
-		<td align="center">Tech Merit</td>
-		<td align="center">Readability</td>
-		<td align="center">Originality</td>
-		<td align="center">Relavance</td>
-		<td align="center">Overall Recomm</td>
+		<td>PaperID</td>
+		<td>Tech Merit</td>
+		<td>Readability</td>
+		<td>Originality</td>
+		<td>Relavance</td>
+		<td>Overall Recomm</td>
 	</tr>
 	
 	<tr th:if="${ratingList.empty}">
 		<td></td>
-    	<td align="center" colspan="4"><h3>No ratings to display</h3></td>
+    	<td colspan="4"><h3>No ratings to display</h3></td>
     </tr>
     
     <tr th:each="rating : ${ratingList}">
-	    <td align="center" th:text="${rating.paperid}"> </td>
-	    <td align="center" th:text="${rating.techmerit}"> </td>
-	    <td align="center" th:text="${rating.readability}"> </td>
-	    <td align="center" th:text="${rating.originality}"> </td>
-	    <td align="center" th:text="${rating.relavance}"> </td>
-	    <td align="center" th:text="${rating.overallrecomm}"> </td>
+	    <td th:text="${rating.paperid}"> </td>
+	    <td th:text="${rating.techmerit}"> </td>
+	    <td th:text="${rating.readability}"> </td>
+	    <td th:text="${rating.originality}"> </td>
+	    <td th:text="${rating.relavance}"> </td>
+	    <td th:text="${rating.overallrecomm}"> </td>
 	</tr>
 
 

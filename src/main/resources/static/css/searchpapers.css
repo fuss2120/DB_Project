@@ -1,0 +1,22 @@
+h1 {
+	text-align: center;
+}
+table {
+	background: #B5CDFF;
+	padding: 20px;
+	border: 1px solid blue;
+	border-radius: 25px;
+	max-width:500px;
+	margin: auto;
+	width: 60%;
+}
+td {
+	padding:0 15px 0 15px;
+	text-align: center;
+}
+tr{
+	height: 25px;
+}
+#paperid {
+	text-align: right;
+}
