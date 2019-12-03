@@ -13,21 +13,21 @@
 
 <table>
 	<tr>
-		<td class="first">First Name:</td>
-		<td><input type="text" name="firstname" maxlength="20"/></td>
+		<td class="first">*First Name:</td>
+		<td><input type="text" name="firstname" maxlength="25"/></td>
 	</tr>
 	<tr>
 		<td class="first">M. Init:</td>
 		<td><input type="text" name="minit" maxlength="1" size="2"/></td>
 	</tr>
 	<tr>
-		<td class="first">Last Name:</td>
-		<td><input type="text" name="lastname" maxlength="20"</td>
+		<td class="first">*Last Name:</td>
+		<td><input type="text" name="lastname" maxlength="25"</td>
 	</tr>
 
 	<tr>
-		<td class="first">Email:</td>
-		<td><input type="text" name="email" size="35" /></td>
+		<td class="first">*Email:</td>
+		<td><input type="text" name="email" size="30" /></td>
 	</tr>
 	<tr>
 		<td class="first">Phone:</td>
@@ -55,8 +55,8 @@
 	</tr>
 	
 	<tr>
-		<td class="first">Password:</td>
-		<td><input type="password" name="password" maxlength="20"/></td>
+		<td class="first">*Password:</td>
+		<td><input type="password" name="password" maxlength="15"/></td>
 	</tr>
 
 	<tr></tr>
@@ -64,6 +64,10 @@
 	<tr>
 		<td></td>
 		<td><input type="submit" value="Register"/></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2"><p th:text="${message}" /></td>
 	</tr>
 
 </table>

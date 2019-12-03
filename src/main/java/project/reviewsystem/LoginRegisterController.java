@@ -32,28 +32,56 @@ public class LoginRegisterController {
     
     @RequestMapping(value="/registration", method=RequestMethod.GET)
     public String registration(Model model) {
+    	model.addAttribute("message", "");
         return "registration";
     }
 
     @RequestMapping(value="/registration", method=RequestMethod.POST)
     public String register(@ModelAttribute Participator participator, Model model, HttpSession session) {
-        participatorService.registerParticipator(participator);
-        session.setAttribute("user", participator);
-        return "redirect:/";
+        if(participator.getPassword().equals("")) {
+        	model.addAttribute("message", "Please fill out all required fields.");
+        	return "registration";
+        }
+    	
+    	try{
+        	participatorService.registerParticipator(participator);
+            session.setAttribute("user", participator);
+            return "redirect:/";
+        }
+        catch (Exception ex) {
+        	String errorMessage = getErrorMessage(ex.toString());
+        	model.addAttribute("message", errorMessage);
+        	return "registration";
+        }
+    }
+    
+    private String getErrorMessage(String ex){
+    	if(ex.contains("cannot insert NULL")) {
+    		return "Please fill out all required fields.";
+    	}
+    	else if (ex.contains("unique constraint")) {
+    		return "A user already exists with that email.";
+    	}
+    	return "An unexpected error occurred.";
     }
     
     @GetMapping("/login")
     public String login(Model model) {
+    	model.addAttribute("message", "");
         return "login";
     }
 
     @RequestMapping(value="/login", method=RequestMethod.POST)
     public String loginHandle(@ModelAttribute Participator participator, Model model, HttpSession session) {
         Participator user = participatorService.getParticipatorFromData(participator);
-        if (user == null)
+        if (user == null) {
+        	model.addAttribute("message", "No user matches that username and password.");
             return "login";
-        session.setAttribute("user", user);
-        return "redirect:/";
+        }
+        else {
+            session.setAttribute("user", user);
+            return "redirect:/";
+        }
     }
     
     @GetMapping("/")
