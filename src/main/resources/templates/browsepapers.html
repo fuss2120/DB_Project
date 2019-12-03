@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+	<link rel="stylesheet" type="text/css" href="css/browsepapers.css"/>
     <title>Browse Papers</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
@@ -8,37 +9,22 @@
 	
 <form action="">
 
-<h1 align = "center">Conference Review System Browse Papers</h1>
+<h1>Conference Review System Browse Papers</h1>
 
-<table width ="60%" align = "center">
-	<style>
-	table {
-		background: #B5CDFF;
-		padding: 20px;
-		border: 1px solid blue;
-		border-radius: 25px;
-		max-width:500px;
-	}
-	td {
-		padding:0 15px 0 15px;
-	}
-	tr{
-		height: 25px;
-	}
-	</style>
+<table>
 	
 	<tr>
-		<td align="center"><h4>Title</h4></td>
-		<td align="center"><h4>Paper ID</h4></td>
+		<td><h4>Title</h4></td>
+		<td><h4>Paper ID</h4></td>
 	</tr>
 	
 	<tr th:if="${paperList.empty}">
-		<td align="center" colspan="2"><h3>No papers to display</h3></td>
+		<td colspan="2"><h3>No papers to display</h3></td>
 	</tr>
 	
 	<tr th:each="paper : ${paperList}">
-	    <td align="center" th:text="${paper.title}"> </td>
-	    <td align="center">
+	    <td th:text="${paper.title}"> </td>
+	    <td>
 	    	<a th:href="@{'/searchpapers?paperId=' + ${paper.paperid}}" th:text="${paper.paperid}"/>
 	    </td>
 	</tr>

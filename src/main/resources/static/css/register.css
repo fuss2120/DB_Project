@@ -1,0 +1,22 @@
+h1 {
+	text-align: center;
+}
+table {
+	background: #B5CDFF;
+	padding: 20px;
+	border: 1px solid blue;
+	border-radius: 25px;
+	max-width:500px;
+	width: 60%;
+	margin: auto;
+}
+td {
+	padding:0 15px 0 15px;
+}
+.first {
+	text-align: right;
+	width: 30%
+}
+tr{
+	height: 25px;
+}

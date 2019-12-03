@@ -32,6 +32,9 @@ public class ReviewCreateController {
 
     @Autowired
     private RatingService ratingService;
+
+    @Autowired
+    private PaperService paperService;
     
     @GetMapping("/reviewpage")
     public String reviewpage(Model model, HttpSession session) {
@@ -47,7 +50,15 @@ public class ReviewCreateController {
     }
 	
     @GetMapping("/createpaper")
-    public String createpage(Model model) {
+    public String createpage(Model model, HttpSession session) {
+        Participator user = (Participator)session.getAttribute("user");
+        model.addAttribute("user", user);
         return "createpaper";
+    }
+
+    @RequestMapping(value="/createpaper", method=RequestMethod.POST)
+    public String uploadPaper(@ModelAttribute Paper paper, Model model, HttpSession session) {
+        paperService.uploadPaper(paper);
+        return "redirect:/";
     }
 }
