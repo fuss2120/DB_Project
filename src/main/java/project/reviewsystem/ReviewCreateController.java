@@ -36,6 +36,11 @@ public class ReviewCreateController {
         model.addAttribute("user", user);
         return "reviewpage";
     }
+
+    @RequestMapping(value="/reviewpage", method=RequestMethod.POST)
+    public String reviewHandle(@ModelAttribute Rating rating, Model model, HttpSession session) {
+        
+    }
 	
     @GetMapping("/createpaper")
     public String createpage(Model model) {
