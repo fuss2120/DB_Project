@@ -1,6 +1,7 @@
 package project.reviewsystem.domain;
 
 public class Rating {
+	private String revemail;
 	private String paperid;
 	private String techmerit;
 	private String readability;
@@ -8,13 +9,22 @@ public class Rating {
 	private String relavance;
 	private String overallrecomm;
 	
-	public Rating(String paperid, String techmerit, String readability, String originality, String relavance, String overallrecomm) {
+	public Rating(String revemail, String paperid, String techmerit, String readability, String originality, String relavance, String overallrecomm) {
+		this.revemail = revemail;
 		this.paperid = paperid;
 		this.techmerit = techmerit;
 		this.readability = readability;
 		this.originality = originality;
 		this.relavance = relavance;
 		this.overallrecomm = overallrecomm;
+	}
+
+	public String getRevemail() {
+		return revemail;
+	}
+
+	public void setRevemail(String revemail) {
+		this.revemail = revemail;
 	}
 	
 	public String getPaperid() {
