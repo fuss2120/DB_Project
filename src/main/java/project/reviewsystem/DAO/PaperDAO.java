@@ -22,5 +22,9 @@ public class PaperDAO {
 		
 		return paperList;
 	}
+
+	public void uploadPaper(Paper paper) {
+		paperMapper.uploadPaper(paper);
+	}
 	
 }

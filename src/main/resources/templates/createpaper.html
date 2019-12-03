@@ -6,9 +6,10 @@
 </head>
 <body>
 	
-<form action="">
+<form action="" method="post">
 
 <h1 align = "center">Conference Review System New Paper</h1>
+<input type="hidden" name="contactauthoremail" th:value="${user.email}"/>
 
 <table align = "center">
 	<style>
@@ -43,7 +44,7 @@
 	
 	<tr>
 		<td>Abstract:</td>
-		<td><textarea name="abstract" cols="30" rows="10"></textarea></td>
+		<td><textarea name="abstractval" cols="30" rows="10"></textarea></td>
 	</tr>
 	
 	<tr></tr>

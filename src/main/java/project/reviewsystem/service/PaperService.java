@@ -22,5 +22,9 @@ public class PaperService {
 		
 		return paperList;
 	}
+
+	public void uploadPaper(Paper paper) {
+		paperDAO.uploadPaper(paper);
+	}
 	
 }
