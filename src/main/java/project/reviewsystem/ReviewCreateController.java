@@ -29,6 +29,9 @@ import project.reviewsystem.service.RatingService;
 public class ReviewCreateController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ReviewCreateController.class);
+
+    @Autowired
+    private RatingService ratingService;
     
     @GetMapping("/reviewpage")
     public String reviewpage(Model model, HttpSession session) {
@@ -39,7 +42,8 @@ public class ReviewCreateController {
 
     @RequestMapping(value="/reviewpage", method=RequestMethod.POST)
     public String reviewHandle(@ModelAttribute Rating rating, Model model, HttpSession session) {
-        
+        ratingService.uploadRating(rating);
+        return "redirect:/";
     }
 	
     @GetMapping("/createpaper")

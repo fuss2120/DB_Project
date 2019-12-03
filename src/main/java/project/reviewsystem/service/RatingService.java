@@ -29,4 +29,8 @@ public class RatingService {
 		ratingList = ratingDAO.getRatingListForPaper(paper);
 		return ratingList;
 	}
+
+	public void uploadRating(Rating rating) {
+		ratingDAO.uploadRating(rating);
+	}
 }
