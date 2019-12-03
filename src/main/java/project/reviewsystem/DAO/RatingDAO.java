@@ -29,4 +29,8 @@ public class RatingDAO {
 		ratingList = ratingMapper.getRatingListForPaper(paper);
 		return ratingList;
 	}
+
+	public void uploadRating(Rating rating) {
+		ratingMapper.uploadRating(rating);
+	}
 }

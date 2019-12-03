@@ -31,11 +31,22 @@ public class ReviewCreateController {
 	private static final Logger logger = LoggerFactory.getLogger(ReviewCreateController.class);
 
     @Autowired
+    private RatingService ratingService;
+
+    @Autowired
     private PaperService paperService;
     
     @GetMapping("/reviewpage")
-    public String reviewpage(Model model) {
+    public String reviewpage(Model model, HttpSession session) {
+        Participator user = (Participator)session.getAttribute("user");
+        model.addAttribute("user", user);
         return "reviewpage";
+    }
+
+    @RequestMapping(value="/reviewpage", method=RequestMethod.POST)
+    public String reviewHandle(@ModelAttribute Rating rating, Model model, HttpSession session) {
+        ratingService.uploadRating(rating);
+        return "redirect:/";
     }
 	
     @GetMapping("/createpaper")
