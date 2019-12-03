@@ -1,37 +1,17 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Home</title>
+	<link rel="stylesheet" type="text/css" href="css/homepage.css"/>
+	<title>Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 	
 <form action="">
 
-<h1 align = "center">Conference Review System Home</h1>
+<h1>Conference Review System Home</h1>
 
-<table align = "center">
-	<style>
-		table {
-			background: #B5CDFF;
-			padding: 20px;
-			border: 1px solid blue;
-			border-radius: 25px;
-			width: 700px;
-		}
-		tr {
-			height: 25px;
-		}
-		td {
-			padding: 0 5px 0 5px;
-			width: 20%;
-			text-align: center;
-		}
-		.pictures {
-			width: 100px;
-			height: 100px;
-		}
-	</style>
+<table>
 	<tr>
 		<td colspan="4"><h2 th:text="@{'Welcome, ' + ${user.firstname}} + '!'"></h2></td>
 	</tr>
