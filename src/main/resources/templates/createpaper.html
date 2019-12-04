@@ -6,22 +6,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+
+	<form action="http://localhost:8080/">
+		<input type="submit" value="Home Page" />
+	</form>
 	
 <form action="" method="post">
 
 <h1>Conference Review System New Paper</h1>
 
+<input type="hidden" name="contactauthoremail" th:value="${user.email}"/>
+
 <table>	
 	<tr>
-		<td>Title:</td>
-		<td><input type="text" name="title" maxlength="30" size="30"/></td>
+		<td>*Title:</td>
+		<td><input type="text" name="title" maxlength="30" size="30" required/></td>
 	</tr>
 	
 	<tr></tr>
 	
 	<tr>
-		<td>File Name:</td>
-		<td><input type="text" name="fileName" maxlength="30" size="30"/></td>
+		<td>*File Name:</td>
+		<td><input type="text" name="fileName" maxlength="30" size="30" required/></td>
 	</tr>
 	
 	<tr>
