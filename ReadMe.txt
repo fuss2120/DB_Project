@@ -1,24 +1,7 @@
-Login Page:
-Error message if email doesn't exist or password doesn't match
+High priority
 
-Registration:
-Catch errors - display message
+Invalid paper id - only allow number searches
 
-Homepage:
-If user is only participant?
+Rating lookup - button to show all
 
-Paper Lookup:
-Button for show all papers - remove initial list
-Invalid paper id
-
-Review Paper
-Save to DB
-Error Handling
-
-Create Paper
-Save to DB
-Error handling
-
-Other:
-Back to home button on every page
-Log out button?
+Create review - error handling if paper doesn't exist, review already exists, or input not a number
