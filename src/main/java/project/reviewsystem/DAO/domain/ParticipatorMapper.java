@@ -13,9 +13,9 @@ public interface ParticipatorMapper {
 
 	@Insert(
 		"INSERT INTO "
-			+ "participator(email, firstname, minit, lastname, phone, affiliation) "
+			+ "participator(email, firstname, minit, lastname, phone, affiliation, password) "
 		+ "VALUES "
-			+ "(#{email}, #{firstname}, #{minit}, #{lastname}, #{phone}, #{affiliation})"
+			+ "(#{email}, #{firstname}, #{minit}, #{lastname}, #{phone}, #{affiliation}, #{password})"
 	)
 	public void registerParticipator(Participator participator);
 
@@ -40,7 +40,7 @@ public interface ParticipatorMapper {
 		+ "FROM Participator p "
 		+ "LEFT JOIN author a ON p.email = a.email "
 		+ "LEFT JOIN reviewer r ON p.email = r.email "
-		+ "WHERE p.email = #{email}"
+		+ "WHERE p.email = #{email} AND p.password = #{password}"
 	)
 	public List<Participator> getParticipatorListFromData(Participator participator);
 }
