@@ -39,6 +39,9 @@ public class PaperLookupController {
 			@ModelAttribute Paper paper,
 			Model model
 		) {
+	    	Participator user = (Participator)session.getAttribute("user");
+        	if (user == null)
+            		return "redirect:/login";
 		List<Rating> ratingList = new ArrayList<Rating>();
 
 		if (paperId == null || paperId.equals(""))
