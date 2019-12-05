@@ -45,7 +45,22 @@ public class ReviewCreateController {
 
     @RequestMapping(value="/reviewpage", method=RequestMethod.POST)
     public String reviewHandle(@ModelAttribute Rating rating, Model model, HttpSession session) {
-        ratingService.uploadRating(rating);
+        try {
+            ratingService.uploadRating(rating);
+        }
+        catch (Exception e) {
+            if (e.getMessage().contains("integrity constraint")) {
+                Participator user = (Participator)session.getAttribute("user");
+                model.addAttribute("user", user);
+                model.addAttribute("errorMessage", "Paper ID does not exist");
+            }
+            else if (e.getMessage().contains("unique constraint")) {
+                Participator user = (Participator)session.getAttribute("user");
+                model.addAttribute("user", user);
+                model.addAttribute("errorMessage", "You already reviewed this paper");
+            }
+            return "reviewpage";
+        }
         return "redirect:/";
     }
 	

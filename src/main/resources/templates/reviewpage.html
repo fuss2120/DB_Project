@@ -21,7 +21,7 @@
 	<tr>
 		<td></td>
 		<td></td>
-		<td id="paperidbox"><input type="text" name="paperid" maxlength="10" size="10" required autofocus placeholder="Paper ID"/></td>
+		<td id="paperidbox"><input type="number" name="paperid" maxlength="10" size="10" required autofocus placeholder="Paper ID"/></td>
 	</tr>
 	
 	<tr>
@@ -80,6 +80,12 @@
 		<td></td>
 		<td></td>
 		<td><input type="submit" value="Submit Review"/></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td><p th:text="${errorMessage}"></p></td>
 	</tr>
 
 </table>
