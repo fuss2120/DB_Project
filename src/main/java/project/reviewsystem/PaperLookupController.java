@@ -42,11 +42,17 @@ public class PaperLookupController {
 		List<Rating> ratingList = new ArrayList<Rating>();
 
 		if (paperId == null || paperId.equals(""))
-    		ratingList = ratingService.getRatingList();
+    		// ratingList = ratingService.getRatingList();
+			ratingList = new ArrayList<>();
+		else if (paperId.equals("all"))
+			ratingList = ratingService.getRatingList();
 		else {
 			paper = new Paper("", paperId);
 			ratingList = ratingService.getRatingListForPaper(paper);
 		}
+
+		boolean hideSearchMessage = (paperId == null);
+		model.addAttribute("hideSearchMessage", hideSearchMessage);
 
     	model.addAttribute("ratingList", ratingList);
         return "searchpapers";

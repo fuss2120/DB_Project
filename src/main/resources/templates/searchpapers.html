@@ -27,10 +27,11 @@
 		<td></td>
 		<td colspan="2"><input type="submit" value="Submit"/></td>
 	</tr>
-	
+
 	<tr>
 		<td></td>
-		<td colspan="4"><h3>All ratings in database:</h3></td>
+		<td></td>
+		<td colspan="2"><input type="button" value="Show All" onclick="window.location.assign('/searchpapers?paperId=all')"/></td>
 	</tr>
 	
 	<tr>
@@ -42,7 +43,7 @@
 		<td>Overall Recomm</td>
 	</tr>
 	
-	<tr th:if="${ratingList.empty}">
+	<tr th:if="${ratingList.empty && !hideSearchMessage}">
 		<td></td>
     	<td colspan="4"><h3>No ratings to display</h3></td>
     </tr>
