@@ -60,6 +60,9 @@ public class PaperLookupController {
 	
 	@GetMapping("/browsepapers")
     public String browsePapers(Model model) {
+	    	Participator user = (Participator)session.getAttribute("user");
+        	if (user == null)
+            		return "redirect:/login";
 		List<Paper> paperList = new ArrayList<Paper>();
 
 		paperList = paperService.getPaperList();
