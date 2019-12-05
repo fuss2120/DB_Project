@@ -87,6 +87,8 @@ public class LoginRegisterController {
     @GetMapping("/")
     public String homepage(Model model, HttpSession session) {
         Participator user = (Participator)session.getAttribute("user");
+        if (user == null)
+            return "redirect:/login";
         model.addAttribute("user", user);
         return "homepage";
     }
