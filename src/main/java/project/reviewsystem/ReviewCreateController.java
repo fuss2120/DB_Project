@@ -38,7 +38,9 @@ public class ReviewCreateController {
     
     @GetMapping("/reviewpage")
     public String reviewpage(Model model, HttpSession session) {
-        Participator user = (Participator)session.getAttribute("user");
+	    Participator user = (Participator)session.getAttribute("user");
+        if (user == null)
+            return "redirect:/login";
         model.addAttribute("user", user);
         return "reviewpage";
     }
@@ -66,7 +68,9 @@ public class ReviewCreateController {
 	
     @GetMapping("/createpaper")
     public String createpage(Model model, HttpSession session) {
-        Participator user = (Participator)session.getAttribute("user");
+	    Participator user = (Participator)session.getAttribute("user");
+        if (user == null)
+            return "redirect:/login";
         model.addAttribute("user", user);
         return "createpaper";
     }
